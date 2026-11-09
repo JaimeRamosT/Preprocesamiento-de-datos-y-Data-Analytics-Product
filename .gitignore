@@ -1,0 +1,24 @@
+# Entornos virtuales y cachés de Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Navegador y drivers descargados localmente
+chromedriver*
+*.log
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Pruebas de extracción (cortes de prueba con pocos registros)
+data/raw/prueba_*.csv
+data/raw/prueba_*.json

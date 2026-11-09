@@ -1,0 +1,15 @@
+# Normaliza finales de línea en texto, salvo los datos.
+* text=auto
+
+# Los CSV se guardan byte a byte: así el dataset inicial no cambia al clonar en Windows.
+*.csv -text
+*.json text eol=lf
+*.ipynb text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+
+# Binarios
+*.pdf binary
+*.png binary
+*.docx binary
+*.pptx binary

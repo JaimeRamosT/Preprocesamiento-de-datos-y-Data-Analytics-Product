@@ -1,0 +1,13 @@
+variable,descripcion,tipo,tipo_pandas,tamano_maximo,valores,unidad
+id_oferta_hash,"Identificador único de la oferta, generado con SHA-256 a partir de sus 8 campos principales y recortado a 24 caracteres",Categórico nominal,string,24,"Código hexadecimal (1010 valores únicos); ej.: 1af30dbb2f0f39e7d0c908cf",-
+puesto,Nombre del puesto ofertado,Categórico nominal,string,127,"842 valores distintos; ej.: ESPECIALISTA LEGAL, ASISTENTE ADMINISTRATIVO",-
+entidad,Entidad pública que publica la oferta,Categórico nominal,string,100,"114 valores distintos; ej.: CONTRALORIA GENERAL DE LA REPUBLICA, PODER JUDICIAL",-
+ubicacion,"Lugar del puesto, con formato DEPARTAMENTO - DISTRITO",Categórico nominal,string,31,"132 valores en 23 departamentos; ej.: LIMA - JESUS MARIA, LA LIBERTAD - TRUJILLO",-
+numero_convocatoria,Código de la convocatoria asignado por la entidad,Categórico nominal,string,53,"283 valores distintos; ej.: 728-06, 276-003",-
+vacantes,Cantidad de puestos disponibles en la oferta,Numérico de proporción,int64,2,1 a 72,Puestos
+remuneracion_pen,Remuneración mensual ofrecida,Numérico de proporción,float64,8,1.00 a 21000.00,Soles (S/) por mes
+fecha_inicio_publicacion,Fecha en que la oferta empieza a difundirse,Numérico de intervalo,date,10,2026-09-17 a 2026-09-18,Fecha (AAAA-MM-DD)
+fecha_fin_publicacion,Fecha en que termina la difusión de la oferta,Numérico de intervalo,date,10,2026-09-30 a 2026-10-01,Fecha (AAAA-MM-DD)
+pagina_origen,Número de la página del listado de la que se extrajo la oferta,Categórico ordinal,int64,3,1 a 105,-
+fuente_url,Dirección web de la que se extrajeron los datos,Categórico nominal,string,88,Valor único: https://app.servir.gob.pe/DifusionOfertasExterno/faces/consultas/ofertas_laborales.xhtml,-
+fecha_extraccion_utc,"Fecha y hora en que se extrajo la página, en tiempo UTC",Numérico de intervalo,datetime,32,2026-09-18T05:58:55 a 2026-09-18T06:05:39,"Fecha y hora (ISO 8601, UTC)"

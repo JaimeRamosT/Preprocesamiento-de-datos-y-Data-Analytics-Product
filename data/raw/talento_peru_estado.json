@@ -1,0 +1,17 @@
+{
+  "version_extractor": "1.0 (Parte 1)",
+  "reconstruido": true,
+  "nota": "La corrida de la Parte 1 no escribió su archivo de estado; estos datos se derivan del CSV.",
+  "fuente_url": "https://app.servir.gob.pe/DifusionOfertasExterno/faces/consultas/ofertas_laborales.xhtml",
+  "limite": 1010,
+  "pausa_segundos": 2,
+  "archivo": "talento_peru_ofertas.csv",
+  "ofertas": 1010,
+  "ofertas_unicas": 1010,
+  "paginas_con_ofertas": 105,
+  "pagina_inicial": 1,
+  "pagina_final": 105,
+  "primera_pagina_utc": "2026-09-18T05:58:55.931516+00:00",
+  "ultima_pagina_utc": "2026-09-18T06:05:39.198174+00:00",
+  "segundos_entre_primera_y_ultima_pagina": 403.3
+}

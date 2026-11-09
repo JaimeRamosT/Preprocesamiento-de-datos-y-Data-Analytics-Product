@@ -1,0 +1,28 @@
+# Python 3.10 a 3.13 (probado con 3.10 y 3.13). Instalar con:
+#   python -m pip install -r requirements.txt
+# Se usan rangos compatibles (no versiones exactas) para que existan ruedas
+# precompiladas en Windows, Linux, macOS y Colab. Las versiones exactas con las
+# que se verificó el proyecto están en el README (sección "Entorno verificado").
+
+# Datos y análisis
+pandas>=2.2,<3.0
+numpy>=1.26,<3.0
+scipy>=1.11,<2.0          # chi2_contingency, mahalanobis
+scikit-learn>=1.4,<2.0    # KMeans, PCA
+
+# Visualización
+matplotlib>=3.8,<4.0
+seaborn>=0.13,<0.14
+
+# Extracción (solo para un corte nuevo; el dataset inicial ya está en data/raw)
+selenium>=4.15,<5.0
+beautifulsoup4>=4.12,<5.0
+
+# Notebooks y ejecución del pipeline
+notebook>=7.0,<8.0
+ipykernel>=6.29,<8.0
+nbformat>=5.10,<6.0
+nbclient>=0.10,<1.0
+
+# Pruebas
+pytest>=8.0,<10.0

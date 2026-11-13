@@ -1,1 +1,11 @@
 variable,descripcion,tipo,tipo_pandas,tamano_maximo,valores,unidad
+id_oferta_hash,"Identificador único de la oferta, generado con SHA-256 a partir de sus 8 campos principales y recortado a 24 caracteres",Categórico nominal,string,24,Código hexadecimal (1006 valores únicos); ej.: 1af30dbb2f0f39e7d0c908cf,-
+puesto,Nombre del puesto ofertado,Categórico nominal,string,127,"838 valores distintos; ej.: ESPECIALISTA LEGAL, ASISTENTE ADMINISTRATIVO",-
+entidad,Entidad pública que publica la oferta,Categórico nominal,string,100,"113 valores distintos; ej.: CONTRALORIA GENERAL DE LA REPUBLICA, PODER JUDICIAL",-
+numero_convocatoria,Código de la convocatoria asignado por la entidad,Categórico nominal,string,53,"282 valores distintos; ej.: 728-06, 276-003",-
+vacantes,Cantidad de puestos disponibles en la oferta,Numérico de proporción,int64,2,1 a 72,Puestos
+remuneracion_pen,Remuneración mensual ofrecida,Numérico de proporción,float64,8,1126.70 a 21000.00,Soles (S/) por mes
+fecha_inicio_publicacion,Fecha en que la oferta empieza a difundirse,Numérico de intervalo,datetime64[ns],10,2026-09-17 a 2026-09-18,Fecha (AAAA-MM-DD)
+fecha_fin_publicacion,Fecha en que termina la difusión de la oferta,Numérico de intervalo,datetime64[ns],10,2026-09-30 a 2026-10-01,Fecha (AAAA-MM-DD)
+departamento,"Departamento del Perú donde se ubica el puesto, obtenido al separar 'ubicacion'",Categórico nominal,string,13,"23 valores distintos; ej.: LIMA, CUSCO, JUNIN",-
+distrito,"Distrito donde se ubica el puesto, obtenido al separar 'ubicacion'",Categórico nominal,string,22,"131 valores distintos; ej.: EL TAMBO, SICUANI",-

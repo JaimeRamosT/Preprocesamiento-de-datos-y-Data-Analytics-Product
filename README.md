@@ -31,11 +31,11 @@ Las convocatorias del Estado están dispersas entre cientos de entidades, cada u
 
 | Rol | Integrante | Responsabilidad | Entregables en el repositorio |
 |---|---|---|---|
-| 1 · Organización y pipeline | *Por definir* | Estructura del repositorio, pipeline de ingestión, validación y almacenamiento, reproducibilidad, integración del trabajo del equipo | `README.md`, `requirements.txt`, `run_pipeline.py`, `src/`, `tests/`, `docs/pipeline.md`, `notebooks/01_extraccion_talento_peru.ipynb` |
-| 2 · Limpieza | *Por definir* | Valores faltantes, outliers, duplicados e inconsistencias, con la justificación de cada decisión | `notebooks/02_limpieza_datos.ipynb`, `data/interim/talento_peru_limpio.csv`, `docs/decisiones/02_limpieza.csv` |
-| 3 · Transformación y dataset final | *Por definir* | Integración, reducción y transformación de variables; diccionario de datos final | `notebooks/03_transformacion_dataset_final.ipynb`, `docs/diccionario_datos_final.csv` y `.pdf` |
-| 4 · Objetivos y Feature Engineering | *Por definir* | Contexto y objetivos actualizados; variables derivadas y su justificación | `notebooks/04_feature_engineering.ipynb`, `data/processed/talento_peru_final.csv` |
-| 5 · Análisis y conclusiones | *Por definir* | Exploración, visualizaciones, insights, recomendaciones y conclusiones | `notebooks/05_analisis_exploratorio.ipynb`, `reports/figures/` |
+| 1 · Organización y pipeline | Jaime Ramos Talla | Estructura del repositorio, pipeline de ingestión, validación y almacenamiento, reproducibilidad, integración del trabajo del equipo | `README.md`, `requirements.txt`, `run_pipeline.py`, `src/`, `tests/`, `docs/pipeline.md`, `notebooks/01_extraccion_talento_peru.ipynb` |
+| 2 · Limpieza | Gonzalo Perea Bartra | Valores faltantes, outliers, duplicados e inconsistencias, con la justificación de cada decisión | `notebooks/02_limpieza_datos.ipynb`, `data/interim/talento_peru_limpio.csv`, `docs/decisiones/02_limpieza.csv` |
+| 3 · Transformación | Daniela Villacorta Sotelo | Integración, reducción y transformación de variables; diccionario de datos del dataset transformado | `notebooks/03_transformacion_dataset_final.ipynb`, `data/interim/talento_peru_transformado.csv`, `docs/diccionario_transformacion.csv` |
+| 4 · Objetivos y Feature Engineering | Ricardo Palomino Meza | Contexto y objetivos actualizados; variables derivadas y su justificación; dataset final y diccionario de datos final | `notebooks/04_feature_engineering.ipynb`, `data/processed/talento_peru_final.csv`, `docs/diccionario_engineering.csv`|
+| 5 · Análisis y conclusiones | Angello Zuloaga Loo | Exploración, visualizaciones, insights, recomendaciones y conclusiones | `notebooks/05_analisis_exploratorio.ipynb`, `reports/figures/` |
 
 Las reglas para trabajar en el repositorio (ramas, commits, notebooks) están en [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -68,7 +68,8 @@ Las reglas para trabajar en el repositorio (ramas, commits, notebooks) están en
 ├── docs/
 │   ├── pipeline.md                 # documentación técnica del pipeline
 │   ├── diccionario_datos_inicial.pdf / .csv
-│   ├── diccionario_datos_final.csv # (y .pdf al cierre)
+│   ├── diccionario_transformacion.csv  # dataset transformado (etapa 3)
+│   ├── diccionario_engineering.csv     # diccionario final: dataset final (etapa 4)
 │   ├── decisiones/                 # una tabla de decisiones por etapa
 │   └── img/pipeline.png
 └── reports/
@@ -155,9 +156,16 @@ La extracción está desactivada por defecto: las ofertas del dataset inicial ya
 | Calidad | 0 nulos, 0 duplicados, `id_oferta_hash` reproducible en las 1010 filas |
 | Formato | CSV, UTF-8, separador coma |
 
-**Dataset final** · `data/processed/talento_peru_final.csv` · [diccionario](docs/diccionario_datos_final.csv)
+**Dataset final** · `data/processed/talento_peru_final.csv` · [diccionario](docs/diccionario_engineering.csv)
 
-> Se completa al cerrar las etapas 2 a 4: número de filas y columnas, variables nuevas y limitaciones.
+| Característica | Valor |
+|---|---|
+| Volumen | 1006 ofertas, 19 columnas, 1758 vacantes |
+| Calidad | 0 nulos, `id_oferta_hash` único; cumple el contrato `final` |
+| Origen de las filas | 1010 ofertas iniciales menos 4 retiradas en la limpieza (remuneraciones sospechosas de S/ 1, S/ 10 y S/ 200) |
+| Variables de la transformación (etapa 3) | `departamento`, `distrito` (separadas de `ubicacion`); fechas en `datetime` |
+| Variables nuevas (etapa 4) | `vacantes_log`, `rango_salarial` (5 tramos), `categoria_vacantes` (3), `regimen_laboral` (4), `modalidad_contrato` (3), `puesto_base` (614 valores), `categoria_ocupacional` (7), `tipo_entidad` (8), `macrorregion` (5) |
+| Formato | CSV, UTF-8, separador coma |
 
 ## Validación y calidad
 

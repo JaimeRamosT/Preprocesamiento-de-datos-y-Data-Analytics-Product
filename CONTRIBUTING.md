@@ -12,7 +12,7 @@ Reglas acordadas para que el trabajo de los cinco integrantes se integre sin con
    | 1 | `pipeline` | `src/`, `tests/`, `run_pipeline.py`, `README.md`, `docs/pipeline.md`, notebook 01 |
    | 2 | `limpieza` | notebook 02, `docs/decisiones/02_limpieza.csv`, `data/interim/talento_peru_limpio.csv` |
    | 3 | `transformacion` | notebook 03, `docs/diccionario_transformacion.csv`, `data/interim/talento_peru_transformado.csv` |
-   | 4 | `features` | notebook 04, `docs/diccionario_datos_final.*`, `data/processed/talento_peru_final.csv` |
+   | 4 | `features` | notebook 04, `docs/diccionario_engineering.csv`, `data/processed/talento_peru_final.csv` |
    | 5 | `analisis` | notebook 05, `reports/figures/` |
 
    ```bash
@@ -50,5 +50,5 @@ Prefijos: `feat` (funcionalidad o análisis nuevo), `fix` (corrección), `docs` 
 - [ ] El notebook corre de principio a fin con *Restart & Run All*.
 - [ ] La validación final del notebook muestra `[OK]`.
 - [ ] Las decisiones quedaron en `docs/decisiones/`.
-- [ ] Las variables nuevas o modificadas están en el diccionario de la etapa: `docs/diccionario_transformacion.csv` (etapa 3) o `docs/diccionario_datos_final.csv` (etapa 4).
+- [ ] Las variables nuevas o modificadas están en el diccionario de la etapa: `docs/diccionario_transformacion.csv` (etapa 3) o `docs/diccionario_engineering.csv` (etapa 4).
 - [ ] `python -m pytest` pasa.

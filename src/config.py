@@ -34,7 +34,8 @@ ARCHIVO_FINAL = DIR_PROCESSED / "talento_peru_final.csv"
 
 # Diccionarios de datos en formato legible por máquina (los PDF se generan a partir de ellos)
 DICCIONARIO_INICIAL = DIR_DOCS / "diccionario_datos_inicial.csv"
-DICCIONARIO_FINAL = DIR_DOCS / "diccionario_datos_final.csv"
+DICCIONARIO_TRANSFORMACION = DIR_DOCS / "diccionario_transformacion.csv"  # Etapa 3 · dataset transformado
+DICCIONARIO_FINAL = DIR_DOCS / "diccionario_datos_final.csv"              # Etapa 4 · dataset final
 
 # Formato de todos los CSV del proyecto
 ENCODING = "utf-8"

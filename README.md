@@ -31,11 +31,11 @@ Las convocatorias del Estado están dispersas entre cientos de entidades, cada u
 
 | Rol | Integrante | Responsabilidad | Entregables en el repositorio |
 |---|---|---|---|
-| 1 · Organización y pipeline | *Por definir* | Estructura del repositorio, pipeline de ingestión, validación y almacenamiento, reproducibilidad, integración del trabajo del equipo | `README.md`, `requirements.txt`, `run_pipeline.py`, `src/`, `tests/`, `docs/pipeline.md`, `notebooks/01_extraccion_talento_peru.ipynb` |
-| 2 · Limpieza | *Por definir* | Valores faltantes, outliers, duplicados e inconsistencias, con la justificación de cada decisión | `notebooks/02_limpieza_datos.ipynb`, `data/interim/talento_peru_limpio.csv`, `docs/decisiones/02_limpieza.csv` |
-| 3 · Transformación y dataset final | *Por definir* | Integración, reducción y transformación de variables; diccionario de datos final | `notebooks/03_transformacion_dataset_final.ipynb`, `docs/diccionario_datos_final.csv` y `.pdf` |
-| 4 · Objetivos y Feature Engineering | *Por definir* | Contexto y objetivos actualizados; variables derivadas y su justificación | `notebooks/04_feature_engineering.ipynb`, `data/processed/talento_peru_final.csv` |
-| 5 · Análisis y conclusiones | *Por definir* | Exploración, visualizaciones, insights, recomendaciones y conclusiones | `notebooks/05_analisis_exploratorio.ipynb`, `reports/figures/` |
+| 1 · Organización y pipeline | Jaime Ramos Talla | Estructura del repositorio, pipeline de ingestión, validación y almacenamiento, reproducibilidad, integración del trabajo del equipo | `README.md`, `requirements.txt`, `run_pipeline.py`, `src/`, `tests/`, `docs/pipeline.md`, `notebooks/01_extraccion_talento_peru.ipynb` |
+| 2 · Limpieza | Gonzalo Perea Bartra | Valores faltantes, outliers, duplicados e inconsistencias, con la justificación de cada decisión | `notebooks/02_limpieza_datos.ipynb`, `data/interim/talento_peru_limpio.csv`, `docs/decisiones/02_limpieza.csv` |
+| 3 · Transformación | Daniela Villacorta Sotelo | Integración, reducción y transformación de variables; diccionario de datos del dataset transformado | `notebooks/03_transformacion_dataset_final.ipynb`, `data/interim/talento_peru_transformado.csv`, `docs/diccionario_transformacion.csv` |
+| 4 · Objetivos y Feature Engineering | Ricardo Palomino Meza | Contexto y objetivos actualizados; variables derivadas y su justificación; dataset final y diccionario de datos final | `notebooks/04_feature_engineering.ipynb`, `data/processed/talento_peru_final.csv`, `docs/diccionario_datos_final.csv` y `.pdf` |
+| 5 · Análisis y conclusiones | Angello Zuloaga Loo | Exploración, visualizaciones, insights, recomendaciones y conclusiones | `notebooks/05_analisis_exploratorio.ipynb`, `reports/figures/` |
 
 Las reglas para trabajar en el repositorio (ramas, commits, notebooks) están en [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -68,7 +68,8 @@ Las reglas para trabajar en el repositorio (ramas, commits, notebooks) están en
 ├── docs/
 │   ├── pipeline.md                 # documentación técnica del pipeline
 │   ├── diccionario_datos_inicial.pdf / .csv
-│   ├── diccionario_datos_final.csv # (y .pdf al cierre)
+│   ├── diccionario_transformacion.csv  # dataset transformado (etapa 3)
+│   ├── diccionario_datos_final.csv     # dataset final, etapa 4 (y .pdf al cierre)
 │   ├── decisiones/                 # una tabla de decisiones por etapa
 │   └── img/pipeline.png
 └── reports/

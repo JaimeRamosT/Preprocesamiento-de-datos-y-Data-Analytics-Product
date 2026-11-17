@@ -1,0 +1,20 @@
+variable,descripcion,tipo,tipo_pandas,tamano_maximo,valores,unidad
+id_oferta_hash,"Identificador único de la oferta, generado con SHA-256 a partir de sus 8 campos principales y recortado a 24 caracteres",Categórico nominal,string,24,Código hexadecimal (1006 valores únicos); ej.: 1af30dbb2f0f39e7d0c908cf,-
+puesto,Nombre del puesto ofertado,Categórico nominal,string,127,"838 valores distintos; ej.: ESPECIALISTA LEGAL, ASISTENTE ADMINISTRATIVO",-
+entidad,Entidad pública que publica la oferta,Categórico nominal,string,100,"113 valores distintos; ej.: CONTRALORIA GENERAL DE LA REPUBLICA, PODER JUDICIAL",-
+numero_convocatoria,Código de la convocatoria asignado por la entidad,Categórico nominal,string,53,"282 valores distintos; ej.: 728-06, 276-003",-
+vacantes,Cantidad de puestos disponibles en la oferta,Numérico de proporción,int64,2,1 a 72,Puestos
+remuneracion_pen,Remuneración mensual ofrecida,Numérico de proporción,float64,8,1126.70 a 21000.00,Soles (S/) por mes
+fecha_inicio_publicacion,Fecha en que la oferta empieza a difundirse,Numérico de intervalo,datetime64[ns],10,2026-09-17 a 2026-09-18,Fecha (AAAA-MM-DD)
+fecha_fin_publicacion,Fecha en que termina la difusión de la oferta,Numérico de intervalo,datetime64[ns],10,2026-09-30 a 2026-10-01,Fecha (AAAA-MM-DD)
+departamento,"Departamento del Perú donde se ubica el puesto, obtenido al separar 'ubicacion'",Categórico nominal,string,13,"23 valores distintos; ej.: LIMA, CUSCO, JUNIN",-
+distrito,"Distrito donde se ubica el puesto, obtenido al separar 'ubicacion'",Categórico nominal,string,22,"131 valores distintos; ej.: EL TAMBO, SICUANI",-
+vacantes_log,"Logaritmo natural de 'vacantes', creado para reducir su sesgo (de 12.5 a 2.9)",Numérico de intervalo,float64,4,0.00 a 4.28,ln(puestos)
+rango_salarial,"Tramo salarial ordenado, obtenido al discretizar 'remuneracion_pen'",Categórico ordinal,category,24,"5 valores ordenados: Bajo (< 2,500) < Medio-bajo (2,500-3,999) < Medio (4,000-5,999) < Medio-alto (6,000-7,999) < Alto (>= 8,000)",Soles (S/) por mes
+categoria_vacantes,"Tamaño de la convocatoria según el número de vacantes, obtenido al discretizar 'vacantes'",Categórico ordinal,category,16,3 valores ordenados: 1 vacante < 2 a 5 vacantes < 6 o más vacantes,Puestos
+regimen_laboral,"Régimen laboral de la oferta, extraído del texto de 'numero_convocatoria'",Categórico nominal,string,33,"4 valores: D.LEG 1057, 728, 276, DOCENTES UNIVERSITARIOS LEY 30220",-
+modalidad_contrato,Modalidad del contrato indicada entre paréntesis en 'numero_convocatoria'; NO ESPECIFICADA si el código no la indica,Categórico nominal,string,21,"3 valores: NECESIDAD TRANSITORIA, SUPLENCIA, NO ESPECIFICADA",-
+puesto_base,"Nombre del puesto normalizado (mayúsculas, sin tildes, sin código de perfil, paréntesis ni lugar), obtenido de 'puesto'",Categórico nominal,string,127,"614 valores distintos; ej.: ESPECIALISTA LEGAL, ASISTENTE ADMINISTRATIVO, ABOGADO I",-
+categoria_ocupacional,Tipo de cargo clasificado con palabras clave sobre 'puesto_base'; OTROS si ninguna regla coincide,Categórico nominal,string,32,"7 valores: JEFATURA Y COORDINACION, PROFESIONAL, ESPECIALISTA / ANALISTA, TECNICO, AUXILIAR / OPERATIVO, ASISTENTE / APOYO ADMINISTRATIVO, OTROS",-
+tipo_entidad,Tipo de entidad clasificado con palabras clave sobre 'entidad'; GOBIERNO NACIONAL agrupa a los ministerios y organismos nacionales sin regla específica,Categórico nominal,string,29,"8 valores: CONTRALORIA, SALUD, EDUCACION, UNIVERSIDAD, GOBIERNO LOCAL, GOBIERNO REGIONAL, JUSTICIA Y MINISTERIO PUBLICO, GOBIERNO NACIONAL",-
+macrorregion,"Macrorregión del Perú a la que pertenece 'departamento', mediante un diccionario departamento -> macrorregión",Categórico nominal,string,11,"5 valores: LIMA-CALLAO, NORTE, CENTRO, SUR, ORIENTE",-

@@ -158,7 +158,14 @@ La extracción está desactivada por defecto: las ofertas del dataset inicial ya
 
 **Dataset final** · `data/processed/talento_peru_final.csv` · [diccionario](docs/diccionario_engineering.csv)
 
-> Se completa al cerrar las etapas 2 a 4: número de filas y columnas, variables nuevas y limitaciones.
+| Característica | Valor |
+|---|---|
+| Volumen | 1006 ofertas, 19 columnas, 1758 vacantes |
+| Calidad | 0 nulos, `id_oferta_hash` único; cumple el contrato `final` |
+| Origen de las filas | 1010 ofertas iniciales menos 4 retiradas en la limpieza (remuneraciones no plausibles) |
+| Variables de la transformación (etapa 3) | `departamento`, `distrito` (separadas de `ubicacion`); fechas en `datetime` |
+| Variables nuevas (etapa 4) | `vacantes_log`, `rango_salarial` (5 tramos), `categoria_vacantes` (3), `regimen_laboral` (4), `modalidad_contrato` (3), `puesto_base` (614 valores), `categoria_ocupacional` (7), `tipo_entidad` (8), `macrorregion` (5) |
+| Formato | CSV, UTF-8, separador coma |
 
 ## Validación y calidad
 
